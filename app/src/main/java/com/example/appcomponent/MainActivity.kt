@@ -1,5 +1,6 @@
 package com.example.appcomponent
 
+import android.content.Intent
 import android.database.Cursor
 import android.net.Uri
 import android.os.Bundle
@@ -24,6 +25,12 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
+        // INTENT To Call MY Services
+        val intent = Intent(this, MyService::class.java)
+
+        startService(intent)
+
+        // TO SHOW SMS Massages
         getSms()
 
 

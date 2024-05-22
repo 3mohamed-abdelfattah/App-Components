@@ -26,6 +26,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <!--Implement Service-->
+        <service android:name=".MyService" />
     </application>
 
 </manifest>

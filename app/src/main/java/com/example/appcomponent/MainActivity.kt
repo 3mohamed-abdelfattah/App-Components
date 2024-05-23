@@ -3,6 +3,7 @@ package com.example.appcomponent
 import android.content.Intent
 import android.database.Cursor
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.enableEdgeToEdge
@@ -25,10 +26,19 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-        // INTENT To Call MY Services
+        // INTENT To Call MY Services (Background Service)
         val intent = Intent(this, MyService::class.java)
 
-        startService(intent)
+
+        // TO Apply Foregroundservices if API at least 26
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            startForegroundService(intent)
+        } else {
+            //  Else Apply normal background Service
+            startService(intent)
+        }
+
+//        startService(intent)
 
         // TO SHOW SMS Massages
         getSms()

@@ -12,9 +12,9 @@ class MyBroadcastReceiver : BroadcastReceiver() {
         when (p1?.action) {
             Intent.ACTION_AIRPLANE_MODE_CHANGED -> {
                 if (p1.extras?.getBoolean("state") == true) {
-                    Toast.makeText(p0, "AirPlane Active", Toast.LENGTH_LONG).show()
+                    Toast.makeText(p0, "AirPlane Mode Active", Toast.LENGTH_LONG).show()
                 } else {
-                    Toast.makeText(p0, "AirPlane Disabled", Toast.LENGTH_LONG).show()
+                    Toast.makeText(p0, "AirPlane Mode Disabled", Toast.LENGTH_LONG).show()
                 }
             }
         }
